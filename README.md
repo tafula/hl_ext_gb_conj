@@ -27,7 +27,7 @@
 * *lists/r2ns.txt:* Values of r\_{P,2}(n) for n <= 10^7, separated by space.
 
 ----
-##How to run
+## How to run
 
 ### Linux
  1. Run gen_lists.sh
@@ -43,6 +43,6 @@ In both cases, lists are stored in ~/lists and images are stored in ~/imgs.
 
 
 ----
-##Dependencies
+## Dependencies
 
 All the Python scripts were written for Python 2.7. Apart from standard Python libraries, [SciPy](https://www.scipy.org/) and [Matplotlib](https://matplotlib.org/) are necessary to run the scripts.
