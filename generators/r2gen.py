@@ -38,17 +38,16 @@ filepath = os.path.abspath(os.path.join(basepath, "..", "lists", "r2ns.txt"))
 f = open(filepath, 'w+')
 f.truncate()
 
-count = 0
 Y = [0 for x in range(N+1)]
 for p in primes:
 	Y[p] = 1
-	if p > count:
-		print p
-		count += 10000
+	sys.stdout.write("\r%d" % p)
+	sys.stdout.flush()
 
 Y.pop(0)
 
-print "convolving..."
+sys.stdout.write("\rfftconvolving...")
+sys.stdout.flush()
 
 # Fast Fourier
 xRTWO = signal.fftconvolve(Y, Y, mode='full') 
@@ -60,4 +59,5 @@ for r2 in xRTWO:
 	count += 1
 	if count > N: break
 
-
+sys.stdout.write("\r          \r")
+sys.stdout.flush()

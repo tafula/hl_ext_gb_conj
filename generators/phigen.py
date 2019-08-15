@@ -80,11 +80,10 @@ filepath = os.path.abspath(os.path.join(basepath, "..", "lists", "phis.txt"))
 f = open(filepath, 'w+')
 f.truncate()
 
-count = N #variable to keep track of progress
-
 for n in range(1, N+1):
 	f.write(str(phi(n)) + ' ')
-	count -= 1
-	if count % 10000 == 0: print count
+	sys.stdout.write("\r%d" % n)
+	sys.stdout.flush()
 
-
+sys.stdout.write("\r          \r")
+sys.stdout.flush()

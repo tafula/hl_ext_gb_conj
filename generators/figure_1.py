@@ -99,22 +99,22 @@ for n in range(1, N+1):
 			xPIE.append( i)
 	except IndexError:
 		xPIE.append( i)
-
-print "xPIE\n"
+sys.stdout.write("\r1/3")
+sys.stdout.flush()
 
 #array xPHI
 xPHI = [0]
 for n in range(1, N+1):
 	xPHI.append( phi(n))
-	
-print "xPHI\n"
+sys.stdout.write("\r2/3")
+sys.stdout.flush()
 		
 #array xOMEG		
 xOMEG = [0]
 for n in range(1, N+1):
 	xOMEG.append( omega(n))
-	
-print "xOMEG\n"
+sys.stdout.write("\r3/3")
+sys.stdout.flush()
 
 
 # get rid of odd numbers
@@ -135,20 +135,26 @@ for n in X:
 
 
 # plot
-params = {'axes.labelsize': 30,
-         'axes.titlesize': 30,
-         'xtick.labelsize': 30,
-         'ytick.labelsize': 30}
+params = {'axes.labelsize': 25,
+         'axes.titlesize': 25,
+         'xtick.labelsize': 20,
+         'ytick.labelsize': 20}
 
 plt.rcParams.update(params)
+plt.figure(figsize = (1366.0/96, 768.0/96), dpi = 96)
 
 plt.xlabel('2n')
-plt.text(50000, 19000, r'$\varphi(2n)/2$', fontsize=40, color='b')
-plt.text(75000, 4000, r'$\pi(2n)-\omega(2n)$', fontsize=40, color='r')
-plt.plot(X,x2PHI2, marker='.', linestyle = '', color='b')
-plt.plot(X,xPW, linestyle = '-', color='r')
-plt.show()
+plt.text(50000, 19000, r'$\varphi(2n)/2$', fontsize=25, color='.5')
+plt.text(75000, 4000, r'$\pi(2n)-\omega(2n)$', fontsize=25, color='0')
 
+plt.plot(X,x2PHI2, marker='.', linestyle = '', color='.5')
+plt.plot(X,xPW, linestyle = '-', color='0')
 
+plt.xlim(0, X[len(X)-1])
+plt.ylim(ymin=0)
 
+#plt.show()
+plt.savefig(os.path.abspath(os.path.join(basepath, "..", "imgs", "figure_1.png")), dpi = 96)
 
+sys.stdout.write("\r          \r")
+sys.stdout.flush()

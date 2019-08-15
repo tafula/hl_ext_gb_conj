@@ -23,17 +23,23 @@ count = N  #variable to keep track of progress
 p = 2
 X = range(N+1)
 X[1] = 0
+
+
 while p <= sqrt(N):
+	sys.stdout.write("\r%d" % p)
+	sys.stdout.flush()
+
 	i = p
-	while ((i+p) < N):
+	while ((i+p) <= N):
 		X[i+p] = 0
 		i += p
 
 	p += 1
 	while X[p] == 0: p += 1
-	print p
 
 # Write nonzero terms
 for x in X:
 	if x != 0: f.write(str(x) + ' ')
-	
+
+sys.stdout.write("\r          \r")
+sys.stdout.flush()
