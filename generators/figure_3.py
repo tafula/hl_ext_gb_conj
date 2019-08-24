@@ -1,4 +1,5 @@
 import scipy.integrate as integrate
+from matplotlib.ticker import StrMethodFormatter
 import matplotlib.pyplot as plt
 from math import *
 import os.path
@@ -85,27 +86,31 @@ for n in Y:
 	except (ZeroDivisionError, ValueError):
 		xSIM.append(1)
 	
-	if n % 100 == 0:
+	if n % 1000 == 0:
 		sys.stdout.write("\r%d" % n)
 		sys.stdout.flush() 
 
 
 # plot
-params = {'axes.labelsize': 25,
-         'axes.titlesize': 25,
-         'xtick.labelsize': 20,
-         'ytick.labelsize': 20}
+plt.rc('text', usetex=True)
+plt.rc('font', family='serif')
+
+params = {'axes.labelsize': 45,
+         'axes.titlesize': 45,
+         'xtick.labelsize': 45,
+         'ytick.labelsize': 45}
 
 plt.rcParams.update(params)
-plt.figure(figsize = (1366.0/96, 768.0/96), dpi = 96)
+plt.figure(figsize = (2100.0/96, 1220.0/96), dpi = 96)
 
 plt.ticklabel_format(style='sci', axis='x', scilimits=(0,0))
-plt.xlabel('n (even)')
-plt.ylabel('ratio')
+plt.xlabel(r"$n$ (even)")
+plt.ylabel("ratio")
 
-plt.plot(Y,xSIM, marker=',', linestyle='', color='r')
+plt.plot(Y,xSIM, marker=',', linestyle='', color='crimson')
 
 plt.xlim(0, Y[len(Y)-1])
+plt.gca().yaxis.set_major_formatter(StrMethodFormatter('{x:,.1f}'))
 plt.ylim((0,2))
 
 #plt.show()

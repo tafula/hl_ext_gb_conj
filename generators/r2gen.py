@@ -59,5 +59,5 @@ for r2 in xRTWO:
 	count += 1
 	if count > N: break
 
-sys.stdout.write("\r          \r")
+sys.stdout.write("\r                     \r")
 sys.stdout.flush()

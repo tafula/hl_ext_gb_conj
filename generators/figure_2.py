@@ -59,20 +59,23 @@ for n in Y:
 
 
 # plot
-params = {'axes.labelsize': 25,
-         'axes.titlesize': 25,
-         'xtick.labelsize': 20,
-         'ytick.labelsize': 20}
+plt.rc('text', usetex=True)
+plt.rc('font', family='serif')
+
+params = {'axes.labelsize': 45,
+         'axes.titlesize': 45,
+         'xtick.labelsize': 45,
+         'ytick.labelsize': 45}
 
 plt.rcParams.update(params)
-plt.figure(figsize = (1366.0/96, 768.0/96), dpi = 96)
+plt.figure(figsize = (2100.0/96, 1220.0/96), dpi = 96)
 
 plt.ticklabel_format(style='sci', axis='x', scilimits=(0,0))
 plt.ticklabel_format(style='sci', axis='y', scilimits=(0,0))
-plt.xlabel('n (even)')
-plt.ylabel(r'$r_{\mathbb{P},2}(n)$')
+plt.xlabel(r"$n$ (even)")
+plt.ylabel(r"$r_{{P},2}(n)$")
 
-plt.plot(Y,xSIM, marker=',', linestyle='', color='b')
+plt.plot(Y,xSIM, marker=',', linestyle='', color='royalblue')
 
 plt.xlim(0, Y[len(Y)-1])
 plt.ylim(ymin=0)

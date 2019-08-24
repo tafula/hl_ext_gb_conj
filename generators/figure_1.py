@@ -135,17 +135,22 @@ for n in X:
 
 
 # plot
-params = {'axes.labelsize': 25,
-         'axes.titlesize': 25,
-         'xtick.labelsize': 20,
-         'ytick.labelsize': 20}
+plt.rc('text', usetex=True)
+plt.rc('font', family='serif')
+
+params = {'axes.labelsize': 45,
+         'axes.titlesize': 45,
+         'xtick.labelsize': 45,
+         'ytick.labelsize': 45}
 
 plt.rcParams.update(params)
-plt.figure(figsize = (1366.0/96, 768.0/96), dpi = 96)
+plt.figure(figsize = (2100.0/96, 1220.0/96), dpi = 96)
 
-plt.xlabel('2n')
-plt.text(50000, 19000, r'$\varphi(2n)/2$', fontsize=25, color='.5')
-plt.text(75000, 4000, r'$\pi(2n)-\omega(2n)$', fontsize=25, color='0')
+plt.ticklabel_format(style='sci', axis='x', scilimits=(0,0))
+plt.ticklabel_format(style='sci', axis='y', scilimits=(0,0))
+plt.xlabel(r"$2n$")
+plt.text(50000, 19000, r"$\varphi(2n)/2$", fontsize=40, color='.5')
+plt.text(75000, 4000, r"$\pi(2n)-\omega(2n)$", fontsize=40, color='0')
 
 plt.plot(X,x2PHI2, marker='.', linestyle = '', color='.5')
 plt.plot(X,xPW, linestyle = '-', color='0')
