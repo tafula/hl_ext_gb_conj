@@ -1,5 +1,5 @@
 # Python scripts for figures in:
-### *"An elementary heuristic for Hardy–Littlewood extended Goldbach's conjecture"* [arXiv:1508.05702](https://arxiv.org/abs/1508.05702)
+### *"An elementary heuristic for Hardy–Littlewood extended Goldbach's conjecture"* [DOI:10.1007/s40863-019-00146-3](https://doi.org/10.1007/s40863-019-00146-3) / [arXiv:1508.05702](https://arxiv.org/abs/1508.05702)
  
 ----
 ## Description
